@@ -1,20 +1,25 @@
-<html>
-    <head>
-        <title>Post_list</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
+{% extends 'base.html' %}
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-        </div>
+{% block content %}
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-        </div>
-    </body>
-</html>
+    <style>
+        .testing {
+            background-color: white;
+            height: 3rem;
+            width: 3rem;
+            margin: 1rem;
+        }
+    </style>
+
+    <div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
+
+
+        {% for post in posts %}
+            <div>
+                {{ post }}
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
