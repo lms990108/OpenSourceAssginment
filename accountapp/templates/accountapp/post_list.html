@@ -2,21 +2,15 @@
 
 {% block content %}
 
-    <style>
-        .testing {
-            background-color: white;
-            height: 3rem;
-            width: 3rem;
-            margin: 1rem;
-        }
-    </style>
-
-    <div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
-
+    <div style="height: 20rem; border-radius: 1rem; margin: 2rem; font-family: 'Jua', sans-serif">
 
         {% for post in posts %}
-            <div>
-                {{ post }}
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
             </div>
         {% endfor %}
 

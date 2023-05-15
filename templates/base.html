@@ -3,17 +3,24 @@
 
 {% include 'head.html' %}
 
+
 <body>
 
-    {% include 'header.html' %}
+{% include 'header.html' %}
 
-    <hr>
+<hr>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
 
-    {% block content %}
-    {% endblock %}
+<hr>
 
-    <hr>
+{% include 'foot.html' %}
 
-    {% include 'foot.html' %}
 </body>
 </html>
