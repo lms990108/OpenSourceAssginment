@@ -12,8 +12,7 @@
 
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        <a href="/post/{{ post.pk }}/edit/" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
-{#        <a class="btn-secondary" href="/post_edit/{{ post.pk }}"><span class="bi bi-pencil"></span></a>#}
+        <a href="/post/{{ post.pk }}/edit/" class="btn btn-outline-dark"><span class="glyphicon glyphicon-plus">수정</span></a>
     </div>
 
 {% endblock %}
