@@ -1,8 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-
 from .models import Post
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
 
 
@@ -23,7 +20,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('post_list')
+            return redirect('accountapp:post_detail', pk = post.pk)
     else:
         form = PostForm()
     return render(request, 'accountapp/post_edit.html', {'form': form})
@@ -37,7 +34,7 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('post_list')
+            return redirect('accountapp:post_detail', pk = post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'accountapp/post_edit.html', {'form': form})
